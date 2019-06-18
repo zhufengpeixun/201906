@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. for    while  for  in
+    // for循环的四步曲
+    // 1. 定义一个变量i
+    // 2. 条件判断
+    // 3. 条件满足，执行循环体
+    // 4. i++
+    // 1-->2 --> 3-->4 --> 2--> 3-->4...
+    // continue: 结束本轮循环
+    // break： 结束整个循环
+    //debugger// : 让代码停止到这一行
+    // JS 是单线程的；每次只能执行一行代码；
+   /* for(var i=0;i<10;i++){
+        // 大括号中的内容叫循环体
+        continue;
+        console.log(1);
+        break;
+    }
+    console.log(i);// 10*/
+   /*for(var i=0;i<9;i++){
+       if(i<5){
+           i+=2;
+           continue;
+       }
+       if(i>7){
+           break;
+       }
+       i++;
+   }
+    console.log(i);// 10  8*/
+
+    // while : 不知道循环次数用while
+    // 获取上一个哥哥的元素节点
+
+    // for  in 循环:可以循环对象和数组；
+    /*var ary = [2,3,5,6,2,5,0];
+    for(var i=0;i<ary.length;i++){
+        console.log(ary[i]);
+    }*/
+    var obj = {name:"juncheng",age:20}
+    /*for(var i=0;i<obj.length;i++){
+
+    }*/
+    for(var key in obj){
+        // key : 属性名
+        // obj ： 要循环的对象
+        console.log(key);
+        console.log(typeof key);// "string"
+        console.log(obj["name"]);
+    }
+    var ary = [2,3,5,6,2,5,0];
+    for(var k in ary){
+        console.log(ary[k]);
+    }
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

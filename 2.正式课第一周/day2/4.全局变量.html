@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 全局变量：在全局作用域下定义的变量或函数是全局变量
+    //        会给window新增一个键值对，属性名是变量名，属性值变量存储的值；
+    //        在全局下定义的函数，也会给window新增键值对，属性名是函数名，属性值是函数的空间地址
+    //
+    // 在私有作用域可以访问全局变量，但是在全局作用域不能访问私有的变量；
+    var num = 9;
+    function fn() {
+        var  num = 18;// 这是一个私有的变量，不会给window新增键值对的；
+        console.log(num)
+        function b() {
+            
+        }
+    }
+    //下面也是给window新增的键值对；
+    m="abcd";
+    console.log(m);
+
+
+    var m=n=10;// m被var，n没有被var；
+    var c,d=11;// c和d都被var
+    console.log(m);// 10;
+    console.log(c);// undefined
+    console.log(d);// 11
+
+
+</script>
+</body>
+</html>

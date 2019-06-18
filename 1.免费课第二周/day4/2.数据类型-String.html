@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    ///  在JS中被单引号或双引号包裹起来的值，都是字符串
+    //  在JS中的值一定是数据类型的一种；
+    var str = "123";
+    var str1 = "mn";
+    // 1. 有length
+    // 2. 有索引
+    // 3. 四则运算
+    //   -  *  / :
+    console.log("3" / 3);// NaN
+    // + ： 字符串拼接
+    console.log("3px" + 3);//"3px3"
+
+    // 方法： 用来处理字符串的；
+    // 1.charAt  : 通过索引获取对应的字符
+    // 2.charCodeAt : 获取对应字符的Unicode编码
+    // 3.toUpperCase
+    // 4.toLowerCase
+    // 5.substr(m,n): 从索引m开始，截取n个
+    // 6.subString(m,n) : 从索引m，截取到索引n;
+    // 7.slice从索引m，截取到索引n;
+    // 8.indexOf :检测字符第一次出现的索引位置
+    // 9.lastIndexOf
+    // 10.concat : 拼接
+    // 11.split : 按照特定的字符将字符串拆分成数组的每一项；
+    // 12.trim : 去空格
+    // 13.replace : 替换,第一个参数是旧字符，第二个是新字符；replace(old,new);原有字符不变；
+
+    var str = "jinfajinfa";
+    //str.indexOf("n")// 2
+    //str.indexOf("g")// -1
+    //console.log(str.split(""));
+    console.log(str.replace("a", "g"));
+    console.log(str);
+
+
+
+</script>
+</body>
+</html>

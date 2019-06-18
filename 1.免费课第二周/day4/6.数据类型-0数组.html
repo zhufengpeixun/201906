@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //var obj = {a:1,b:2}
+    //console.log(obj.length);// undefined
+    // 数组: 由数组成员组成,数组成员之间用逗号隔开；
+    //var  ary = [12,8,"773",90,78]
+    // 1. 数组有length属性
+    // length的属性值代表数组成员的个数；
+    //console.log(ary.length);// 5
+    // 2. 数组成员有与之对应的索引；索引从0开始；依次递增；
+    //console.log(ary[2]);
+    //
+   // 数组的方法
+    // push
+    // pop
+    // shift
+    // unshift
+    // slice（m,n） :  从索引m开始，截取到索引n,不包含n;
+    // splice(m,0,x): 从索引m开始，删除0个，用x替换
+    // splice(m)
+    // indexOf
+    // lastIndexOf
+    // sort ： 排序
+    // reverse : 倒序
+    // concat : 数组的拼接
+    // forEach
+    // map
+    // toString
+    // join: 把数组按照特定的字符连接成一个字符串
+
+
+    var  ary = [12,8,"773",90,78]
+    //ary.splice(1);
+    console.log(ary);
+    ary.sort(function (a,b) {
+        return a-b
+    })
+    console.log(ary.sort);
+    console.log(ary.join("+"));
+
+    // 去重
+    // 冒泡排序
+    // 插入排序
+    // 快速排序
+
+
+
+</script>
+</body>
+</html>

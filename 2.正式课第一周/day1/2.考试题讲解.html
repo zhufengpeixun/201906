@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box" id="box">123</div>
+<script>
+    var box = document.getElementById("box");
+    box.style.color="red";
+    console.log(box);
+    var  box1 = document.getElementsByClassName("box")[0];
+    console.log(box1);
+    box1.style.color="red";
+
+    // 1. typeof   instanceOf   constructor  Object.prototype.toString.call()
+    // typeof
+    // 1. 返回一个字符串
+    // 2. 不能检测对象数据类型
+    // 3. 检测null 是返回"object"
+    //typeof {}//"object";
+    //typeof []// "array"
+    // setTimeout  clearTimeout
+    // setInterval  clearInterval
+
+    // 二：
+    // 1. document.body.appendChild(document.createElement("p"))
+    // previousSibling
+    // substr  substring  slice
+    // replace
+    // 三：
+    // ary.push  ary.splice(ary.length,0,100) ary[ary.length]=100;
+    // ary.pop   ary.length--   ary.splice(ary.length-1,1)
+    // forEach  map
+    // ary.sort(function(a,b){return a-b})
+    // ary.slice(n-1,m)
+
+    // 四.
+    // Math.round(Math.random()*(m-n)+n)
+    // Math.max  Math.min
+    // true  true
+    // "ok"
+
+
+
+/*    var ary = [1,2,34];
+    var result = ary.forEach(function (item,index) {
+        return 1000;
+    })// undefined
+    var result1 = ary.map(function (item,index) {
+        // 数组有几项，执行几次
+        // 映射，返回值是映射成一个新的数组；新的数组的每一项是由当前这个函数的函数值决定
+        // map方法中的return出一个数组，这个数组中放置了当前回调函数每一次执行的返回值；
+        console.log(item);
+        return 100;
+    })//[100,100,100]
+    console.log(result1);*/
+
+    /*var  ary = [124,556,888,965,902,333]
+    console.log(ary.sort());*/
+
+    // 五：
+    /*function sum() {
+        var total = 0;
+        for(var i=0;i<arguments.length;i++){
+            // 校验当前是number类型，并且不是NaN；
+            /!*if(typeof arguments[i]=="number"&&isNaN(NaN)==false){
+                total+=arguments[i];
+            }*!/
+            // 先把所有的数据类型转换成Number类型
+            var s = Number(arguments[i]);
+            if(!isNaN(s)){
+                // 如果是有效数字，就可以进入该判断语句中；
+                total += s;
+            }
+        }
+        return total;
+    }
+    console.log(sum(1, "2", "3px", undefined, [9])); // 3*/
+
+    // 六
+    // 递归： 在函数体内部调用函数自己
+    function sum(num) {
+        // 在递归中一定要有函数中止的条件
+        if(num<=0){
+            return 0;
+        }
+        // 取余
+        if(num%5===0&&num%3===0){
+            return num+sum(num-1);
+        }else{
+            return sum(num-1);
+        }
+    }
+    console.log(sum(100));  // 90+75+sum(74)
+
+  function getCode() {
+      var str= "1234567890abcdefghi...";// 62 [0-61]
+      var newStr = "";
+      var i=0;
+      while(i<4){
+          var index = Math.round(Math.random()*61);
+          if(newStr.indexOf(str[index])===-1){
+              newStr+=str[index];
+              i++;
+          }
+      }
+      return newStr;
+  }
+  getCode();
+</script>
+</body>
+</html>

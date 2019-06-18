@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="time">
+    点我
+</div>
+<script>
+    // 倒计时
+    // 先有思路；
+    // 1. 当前时间和目标时间的时间差（new Date()）
+    // 2. 计算时间差中有多少个小时、分钟、秒；
+    // 3. 把小时 分钟 秒拼接到一起放到页面上
+    // 4. 定时器setInterval每隔一秒计算一次；
+
+    // 如果发现写的代码无效，目的没有实现
+    // 代码从上到下运行，如果遇到报错，下面的代码不再运行；
+    // 报错： Cannot set property 'onclick' of null
+    // 1. 打开控制台；
+    // 学会看控制台；
+    // 1. 在控制台中黑色代表的是字符串，蓝色的代表数字；
+    // 2. 每个页面有一个独立的控制台；
+    // 3. 在控制台中可以写代码，也可以获取当前页面JS中的一些值；
+    var time = document.getElementById("time");
+    console.log(time);
+    console.log(typeof NaN);
+    /*time.onclick = function () {
+        time.style.color="red";
+    }*/
+    // git的使用
+    var mbc = 100;
+    var  a  =100;
+
+    // SVN : 集中式管理；
+    // git  ：代码协作工具；版本记录；分布式
+    // 工作区 -->暂存区---> 历史区 --> 中央仓库
+    // git  init  : 初始化一个git 仓库
+    // git  add ./-A
+    // git  add 文件名 ： 把工作区文件提交到暂存区
+    // 初始使用git；需要配置用户名和密码
+    // git  config --global user.email ""
+    // git  config --global user.name ""
+    // git  commit -m"";将暂存区提交到历史区；
+    // 历史区每提交一次，都会产生一个唯一的ID版本号；
+
+</script>
+</body>
+</html>

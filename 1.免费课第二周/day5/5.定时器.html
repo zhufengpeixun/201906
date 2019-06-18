@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">停止</button>
+<script>
+    // 需要等待3s然后，输出结果100；
+    // 在JS中，提供了两个方法；setTimeout 、setInterval
+    //console.log(setTimeout);
+    // setTimeout(函数,时间毫秒)
+    // 1.当代码运行到14行时，浏览器会立即记录一个初始的时间，当再过3000ms之后，让传进来的函数执行；
+    //2. 每个浏览器都有一个自己的最小的识别时间；谷歌大概在6~8ms;火狐的最小识别时间10~12；IE在14~15ms;
+    // 3.每个定时器的返回值，代表了当前定时器在页面是第几个定时器
+    /*var num = 10;
+    var  n = setTimeout(function (a,b) {
+
+    },0);
+    console.log(n)// 1
+    var m = setTimeout(function () {
+
+    },2000)
+    console.log(m);*/
+
+    /*function A(B) {
+        B()
+    }
+    A(function(){})*/
+
+    // setInterval : 每隔一段时间执行一次；浏览器有最小的识别时间；
+    // 返回值代表当前页面是第几个定时器；
+    /*function fn() {
+        var m = setTimeout(function () {
+
+        },2000)
+    }
+    fn();*/
+    /*var n = setInterval(function () {
+        console.log(100);
+    },1000)
+    console.log(n);
+   // clearInterval  clearTimeout: 把要清除的定时器的返回值传给此方法；当前定时器就销毁；
+   var btn = document.getElementById("btn");
+   btn.onclick = function () {
+       clearInterval(n)
+   }
+   var total =100;*/
+
+
+    //定时器扩展
+    setTimeout(function () {
+        console.log(100);
+    },8)
+    var t = new Date();
+    for(var i=0;i<100000000;i++){
+    }
+    console.log(new Date()-t)
+    console.log(i);
+
+
+</script>
+</body>
+</html>

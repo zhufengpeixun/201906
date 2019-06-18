@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 过程：浏览器做了什么
+    // 什么是函数
+    // 函数属于引用数据类型
+    // 函数分为两部分： 定义和执行
+    /*console.log(100);
+    function fn(){
+        console.log(200);
+    }*/
+    // 函数的定义：
+    // 1. 开辟一个堆内存，有个对应的空间地址
+    // 2. 把函数体中的代码以字符串的形式存储到堆内存中
+    // 3. 把函数的空间地址赋值给函数名；
+    // Cannot read property 'm' of undefined:
+
+    // 函数执行
+    // 1. 开辟一个栈内存；
+    // 2. 形参赋值
+    // 3. 变量提升
+    // 4. 函数代码从上到下运行
+    // 5. 栈内存是否销毁
+   /* function fn(){
+        console.log(200);
+
+
+
+    }
+    fn();*/
+
+   // 函数把实现同一个功能的代码放到函数体中，当想再次调用这个功能时，可以直接使用执行，减少了代码的冗余，实现了代码的高内聚、低耦合；这就是函数的封装；
+
+   /* var obj ={
+        m:10,
+        f:(function (n) {
+            console.log(obj);
+        })(obj.m)
+    }*/
+
+   // 3. 函数的形参和实参
+    /*function f(a) {// 函数定义的位置是形参
+        // 1. 如果形参没有对应的实参，形参默认存储的undefined；
+    }
+    f(1,2,9,7,76,8)*/// 函数执行的位置是实参
+
+    // 4. arguments： 实参集合
+    /*function f(a,b,c,d) {
+        console.log(arguments);// 只能用函数体中
+        for(var i=0;i<arguments.length;i++){
+            console.log(arguments[i]);
+        }
+    }
+    f(1)*/
+    // 5. return
+    // 1. 将函数体内部的值return出去，函数外面可以使用
+    // 2. 中止函数体中的代码运行；return下面的代码不再执行；
+    /*function f() {
+        // 形参： 函数的入口
+        // return  : 函数的出口
+        var total = 1;
+        return total
+        console.log(199);
+    }
+    var g = f();// 函数的返回值；看函数体中return出的内容；
+    console.log(g);*/
+    // 6.匿名函数
+    var f = function (){
+
+    }
+    (function () {
+
+    })();
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // 免费课: 多试一试；
+    //  JS的数据类型 ：基本数据类型和引用数据类型
+    // 基本数据类型： number 、string 、boolean、null、undefined symbol
+    // 引用数据类型： 对象(object)、数组、正则、Math、Date的实例...
+    //  1. 基本数据类型操作的是值 引用数据类型操作的是空间地址；
+    //  2. 基本数据类型存储在栈内存中，引用数据类型存储到堆内存中；
+    // 正式课： 思考； 前三周
+    var t = 'yy';// 值； yy是数据类型的呢？
+    var  num = 12.4;
+    var str = "function(){}";
+    var bol = true;
+    var  obj = {};
+    var  ary = [];
+    var  reg = /^\d/;
+    // JS 中遇到{}、[],都会开辟一个新的堆内存；
+    // 练习
+    var ary = [1,2,3,4];// ary存储的堆内存的空间地址 [100,2,3,4]
+    function fn(a) {// 形参的ary存储了ary 的空间地址
+        a[0]=100;//根据这个空间地址找到对应的堆内存，并把其中的第一项改成100；
+        a=[];//新的空间地址把原来存储的空间地址覆盖掉；
+        a[0]=1;// 在新的空间地址下，新增键值对；[1]
+        return ary;// [1]
+    }
+    console.log(fn(ary));// 这个地方输出的是函数的返回值；[1]
+    console.log(ary);// [100,2,3,4]
+
+    function fn(ary) {// 存储了一个空间地址
+        var ary = [];
+        return ary;
+    }
+    console.log(fn(ary));// []
+    console.log(ary);//[1,2,3,4]
+
+    // 函数
+    // 1. 函数定义和执行  函数形参、实参  arguments   return  匿名函数；
+    // 1)  开辟一个堆内存
+    // 2)  把函数体中的代码当做字符串存储进去
+    // 3)  把函数空间地址赋值给函数名；
+    /*function f(){
+        console.log(100);
+        f();
+    }
+    f();
+    var obj = {
+        m:10,
+        fn:(function (m) {// 当解析键值对时，就会立即让这个自执行函数执行；
+
+        })(obj.m)
+    }
+    var o = undefined;
+    console.log(o.m);*/
+
+    // 操作语句
+    // 三个判断、三个循环；
+
+</script>
+</body>
+</html>

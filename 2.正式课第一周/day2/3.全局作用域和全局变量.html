@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">点击</button>
+<script>
+    // git   变量提升  作用域   this    面向对象基础；
+    // 学习目标： 理解浏览器解析JS代码的机制；明白代码的执行顺序
+    // 在ECMAScript6之前，JS固定只有两种作用域： 全局作用域和私有作用域
+    // 在一个页面中，私有作用是在全局作用域内部的；
+    // Es6新增了块级作用域；
+    var n = 10;
+    //1. 全局作用域： 当浏览器打开页面时，首先会提供一个供代码执行的运行环境，每个页面都会有一个与之对应的环境，存储全局作用域的基本数据类型值，那么这个环境就是全局作用域；
+    //2. 当关闭页面或关闭浏览器时，那么该页面对应的全局作用域随之销毁；所以全局作用域也叫不销毁的作用域；
+    //3. 全局作用域的作用
+      // 1) 提供全局下代码运行环境
+      // 2) 存储全局基本数据类型值；
+    // 作用域一定是栈内存
+    // console.log(window);
+    // window 是全局作用域的一个最大的对象；当调用window中的方法时，可以省略window.;直接调用；
+    /*window.Number()
+    alert()
+    push()
+    console.log(name);*/
+
+    // 过程：
+    // 1. 形成一个全局作用域；
+   var  num =100;
+   btn.onclick= function () {
+       console.log(num);
+   }
+
+
+
+</script>
+</body>
+</html>

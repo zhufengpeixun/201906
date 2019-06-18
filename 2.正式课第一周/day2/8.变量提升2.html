@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. 形成私有作用域
+    // 2. 形参赋值
+    // 3. 变量提升
+    // 4. 代码开始从上到下执行
+    // 5. 作用域是否销毁；
+
+    /*function fn(b){// b=100
+     // a   foo
+     var a = 10;
+     function foo() {
+
+     }
+     foo();
+     }
+     fn(100);*/
+
+
+    function fn(b) {
+        // 在形参赋值时是100
+        // 在变量提升阶段，只声明一下b,由于没有赋值的操作，所以b仍然存储100;
+        console.log(b);// 函数
+        /*function b() {
+        }*/
+        var  b = "a";
+        console.log(b);
+    }
+    fn(100);
+    // 变量只声明，不定义，如果在浏览器强行输出改变，那么浏览器会默认给这样的变量一个undefined值；
+    console.log(t);
+    var  t=19;
+
+
+
+
+</script>
+</body>
+</html>

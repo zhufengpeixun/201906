@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 免费课: 知识点散
+    // 学习方法： 记和理解；
+    // 免费课第一周： 数据类型 、操作语句（三个判断、三个循环） 函数  选项卡
+    // 免费课第二周： 数组算法   DOM  字符串   定时器
+
+    // 数据类型： 基本数据类型和引用数据类型
+    // 基本数据类型： Number String  Null Boolean undefined
+    // 引用数据类型分为对象数据类型和函数数据类型；
+    // 引用数据类型： 对象  数组 Date的实例  正则 Math 函数
+    // 根本区别：1.基本数据类型是操作值的，引用数据操作的是空间地址；2.基本数据类型存储到栈内存，引用类型存储到堆内存中
+
+    var a = b = 100;
+    var c = d = {f:10};
+    b=99;
+    console.log(b);
+    console.log(a);// 100
+    d.f = 9;
+    console.log(c);// {f:9}
+
+    // Number ：  0  正数  负数   NaN
+    // 1. 方法；函数
+    // toFixed : 保留小数点位数；返回值字符串
+    // toString : 转字符串
+    // isNaN ：校验当前是否是一个有效数字;如果里面不是一个数字，需要强制转成数字
+    // parseInt ： 将其他数据类型转成number类型，不识别小数点
+    // parseFloat： 能识别小数点
+    // Number ： 把其他数据类型强制转成Number类型；
+    /*var num =56;
+    var num1 = "56";
+    console.log(isNaN(NaN));// true
+    console.log(isNaN(100));// false
+    console.log(isNaN("3px"));// true
+    console.log(isNaN("3"));// false
+    console.log(NaN == NaN);// false*/
+   /* Number("100")// 100;
+    Number("zhufeng")// NaN
+    Number(function(){})*/
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #time{
+            width:200px;
+            height:50px;
+            margin:50px auto;
+            border: 1px solid red;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<!--<div id="box">100</div>-->
+<div id="time"></div>
+<script>
+    // 1. 1s之后数字编程99；定时器
+    // 2. innerHTML可以替换页面中元素中的内容；
+    /*var box = document.getElementById("box");
+    setTimeout(function () {
+        box.innerHTML = 99;
+    },1000)*/
+
+
+    // 倒计时
+    // 1. 需要一个结束的目标时间；
+    // 2. 计算当前时刻的时间距离目标时间的时间差；new Date()
+    var time = document.getElementById("time");
+    var targetTime = new Date("2019/6/17 16:20:00");
+    function codeTime(){
+        // 计算当前时刻距离目标时间的毫秒差；
+        var difTime = targetTime - new Date();
+        // 如果difTime小于等于0；应该立即终止定时器；
+        if(difTime<=0){
+            // 清除定时器
+            clearInterval(timer);
+            time.innerHTML="开抢了";
+            return;// 此处终止代码不向下运行；
+        }
+        // 计算这个毫秒差中含有几个小时，几个分钟，几个秒
+        var  hour = Math.floor(difTime/(1000*60*60));
+        var  min = Math.floor((difTime-hour*1000*60*60)/1000/60);
+        var  second = Math.floor((difTime-hour*1000*60*60-min*1000*60)/1000)
+        // 把小时分钟秒拼接到一起放到页面上;在字符串中内容，只代表它自己；
+        var str = addZero(hour)+" : "+addZero(min)+" : "+addZero(second);
+        time.innerHTML= str;
+    }
+    // 进入页面马上执行一次
+    codeTime();
+    // 如果数字小于10；应该在前面加0；
+    function addZero(num) {
+        // 如果num小于10；则在前面加0；否则不加0；
+        /*if(num<10){
+            return "0"+num;
+        }else{
+            return num;
+        }*/
+        return num<10?"0"+num:num;
+    }
+    var timer = setInterval(codeTime,1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    console.log(num);
+    // 变量提升： 变量提前进行声明；
+    // 变量定义两部分： 声明、赋值
+    // 变量只声明，未赋值，那么默认存储的是undefined；
+    /*console.log(num);// undefined
+    var num=10;
+    console.log(num);// 10;
+
+    console.log(n);//n is not defined
+    n=11;*/
+
+    // 变量提升：在当前作用域下，在代码运行之前，浏览器把带var和带有function的进行提前的声明；带var只声明，不赋值，function不仅声明，而且还要赋值；这就是变量提升
+
+    // 在变量提升的时候，把变量在当前作用域的最上端通知了当前作用域下存在这个变量；
+
+    // 打开页面时--> 形成全局作用域--->变量提升--->代码从上往下执行；
+    console.log(fn);// 整个函数；
+    fn();
+    var num =100;
+    // 在变量提升的阶段，进行了函数的定义；1.开辟堆内存2.函数体中代码以字符串存储3.把函数空间地址赋值给函数名；
+    // 当代码运行到30行时，直接跳过；
+    function fn() {
+        // 当执行这个fn函数时，才会进行变量提升；
+        var str = "peixun";
+    }
+    fn()
+
+
+
+</script>
+</body>
+</html>

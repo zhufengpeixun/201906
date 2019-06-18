@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   // 布尔值有且只有两个：true\false
+    //var  class6 = student;
+    // student is not  defined;
+    //var today = true;
+    // 1. true--> 1   false--->0
+   //console.log(true == 1);//true
+    // 2. Boolean:将其他数据类型转换成布尔类型
+   // 只有 0  NaN ""  null undefined 转布尔值是false，其他的都是true；
+    /*Boolean(1)
+    Boolean("1")
+    Boolean("1px")
+    Boolean(NaN)
+    Boolean(null)*/
+    /*var a=0;
+    console.log(Boolean(a));*/// false
+
+    //3. 等号
+    // 1) = : 赋值；从右往左；
+   // 使用变量时，变量代表变量所存储的值；如果没有赋值，默认值是undefined；
+   //console.log(h);// undefined
+   var h = 10000000;
+   console.log(h+"a");// "10000000a"
+    // 2) == : 数据类型的比较
+    // 1==1
+    // 1=="1"
+    // 1==true
+    // 对象==对象 : 比较的是空间地址;
+    // 对象==字符串： 对象转字符串,然后再比较
+    // 对象==布尔： 对象先转字符串，再转数字，布尔值直接转数字
+    // 对象==数字  对象先转字符串，再转数字
+    // 布尔==字符串 都转数字进行比较
+    // 布尔==数字； 布尔转数字
+    // 字符串==数字 ： 字符串转数字
+    // null == undefined : true
+    // 在JS中遇到{}、[]都会开辟一个新的空间地址；
+    //   var a=b ={};
+    //   console.log(a == b);
+
+   // 3) : === 绝对比较
+   // 1==="1"
+   //console.log({}=="");
+
+   // 4. ! : 取反;需要先将！后面的值转成布尔值；
+   console.log(!{});
+   console.log([] == ![])// true
+   console.log([]==false)// true
+   console.log(![]==false)// true
+
+
+</script>
+</body>
+</html>

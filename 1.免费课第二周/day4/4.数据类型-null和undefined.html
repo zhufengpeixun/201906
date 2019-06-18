@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div></div>
+<div id="box"></div>
+<div class="first"></div>
+<script>
+    var box = document.getElementById("box");
+    console.dir(box);
+    console.log(box.previousElementSibling);
+    var  first = document.getElementsByClassName("first1");
+    console.log(first);
+    // 在JS中标签称为元素；是一个对象数据类型的值；
+    // 1. null和 undefined；表示没有
+    // 1) null : 空对象指针；
+    // 1.如果通过getElementById获取元素，如果获取不到，那么结果就是null;
+    // 2.如果获取当前元素哥哥元素节点，如果不存在，那么默认获取到是null；
+    // 3.正则捕获不到内容结果也是null；
+
+    // 2) undefined
+    //   1. 如果函数没有return或return后面没有跟值，那么函数的返回值就是undefined；
+    //   2. 函数的形参没有与之对应的实参，那么形参存储值是undefined；
+    //   3. 变量如果只声明，没有赋值那么默认值是undefined；
+    //   4. 获取对象的属性名对应的属性值，如果属性名不存在，那么获取到的值是undefined；
+    // typeof : 不能检测对象数据类型
+    // instanceOf
+    // constructor
+    // Object.prototype.toString.call()
+    console.log(typeof undefined);//"undefined"
+    console.log(typeof null);//"object"
+    console.log(typeof {});//"object"
+    console.log(typeof []);//"object"
+    console.log(typeof function(){});//"function"
+
+    function fn(a,b) {
+        console.log(a);
+        console.log(b);// undefined
+
+    }
+    fn(1)
+    var  obj = {c:1}
+    console.log(obj.c);// 1
+    console.log(obj.d);// undefined
+
+
+</script>
+</body>
+</html>

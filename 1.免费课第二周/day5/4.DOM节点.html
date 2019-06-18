@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="parent">
+    <div></div>
+    <p></p>
+    <div id="a">
+        今天很暖和
+    </div>
+
+</div>
+<!--sss-->
+<script>
+    var parent = document.getElementById("parent");
+    console.dir(parent)
+    //var  a = document.getElementById("a");
+    //var div = parent.getElementsByTagName("div")
+    //var divs =document.getElementsByTagName("div")[2]
+    // 节点: 节点都是对象数据类型的；
+    // 空格和换行都是文本节点
+
+    // 节点类型     nodeType     nodeName    nodeValue
+    // 元素节点         1       大写的标签名      null
+    // 文本节点         3        #text         文本内容
+    // 注释节点         8        #comment      注释的内容
+    // document       9        #document     null
+
+    // 节点属性
+    // 1.childNodes: 获取所有的子节点
+    // 2. children : 获取元素所有的子元素节点
+    // 3. parentNode: 获取父元素节点
+    // 4. previousSibling: 上一个哥哥节点
+    //    previousElementSibling: 上一个哥哥节点
+    // 5. nextSibling 下一个弟弟节点
+    //    nextElementSibling： 下一个弟弟元素节点
+    // 6. firstChild :第一个子节点
+    //    firstElementChild : 第一个子元素节点
+    // 7.lastChild :最后一个子节点
+    //   lastElementChild: 最后一个子元素节点
+    //console.log(document.documentElement.parentNode);
+
+    // 动态操作DOM的方法
+    var newDiv = document.createElement("div");
+    // 1. document.createElement创建元素
+    // 2. appendChild ： 向容器的末尾新增一个元素；
+    // 3. insertBefore : 向元素的前面新增元素
+    // 4. removeChild : 删除子元素
+    // 5. replaceChild : 替换子节点
+    // 6. cloneNode : 克隆节点;true: 深度克隆，可以把所有子孙接待你克隆出来，如果传false或不传都是浅克隆，只克隆当前元素；
+    // 7. setAttribute   removeAttribute  getAttribute
+    // 8.classList  add  remove  replace
+    //console.log(document.createElement("div"));
+    // parent.appendChild(document.createElement("div"))
+    // parent.insertBefore(newDiv,a);
+   // parent.removeChild(a)
+    // parent.replaceChild(newDiv,a)
+    //parent.appendChild(a.cloneNode(true))
+    //parent.setAttribute("name","abc")
+    //parent.removeAttribute("name")
+    //parent.classList.add("box")
+
+
+</script>
+</body>
+</html>

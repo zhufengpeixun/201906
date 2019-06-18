@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 全局作用域
+    // 私有变量： 在私有作用域下定义的变量就是私有变量
+    // 函数里面可以访问函数外层作用域的变量的；
+    // 如果在函数体内部获取变量的值，如果当前作用域下存在这个变量，那么直接获取当前作用域下的变量，如果不存在，那么需要上上一级作用域查找；如果全局作用域也不存在，那么会报错；
+    /*var  num = "hello";
+    console.log(num);*/
+    /*var num ="world";
+    console.log(num);*/
+    var num =10;
+    function fn() {
+        /*function num() {
+        }*/
+        console.log(num);//undefined
+        var num =100;//
+    }
+    fn();
+
+    // 如果判断当前变量是一个私有变量？
+    // 1. 首先看在当前作用域有没有被var过
+    // 2. 再看当前变量有没有被function过；
+    // 3. 形参也是私有变量；
+
+</script>
+</body>
+</html>
