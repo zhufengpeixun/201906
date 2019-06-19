@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">1234</div>
+<script>
+    // 栈内存： 全局作用域和私有作用域都是栈内存；
+    // 栈内存的回收
+    // 全局作用域： 全局作用域当关闭页面或者是关闭浏览器时，全局作用域销毁；那么全局作用域就叫不销毁的作用域；
+    var num = 10;
+
+    function fn() {
+        console.log(1)
+        var n = 100;
+    }
+    fn();
+    fn();
+    // 私有作用域
+    //1. 立即销毁作用域： 一般情况下，当函数形成私有作用域之后，函数代码执行完之后，会立即销毁；
+
+
+    //2.不销毁的私有作用域
+
+    // 不销毁的作用域需要满足两个条件
+    // 1. return出一个引用数据类型
+    // 2. return 出的值被外界的变量接收；
+
+    // 还有特殊情况
+    // 在函数体中给元素的事件行为绑定方法，那么该作用域也不能销毁；
+   /* function sum() {
+        // sum形成的栈内存中存储了m=10;
+        /!*var  m = 10;
+        return {a:1}*!/
+        var m =1;
+        box.onclick = function () {
+            console.log(m);
+        }
+    }
+    var s = sum();
+    console.log(s);*/
+
+
+   // 3.不立即销毁作用域
+    function fn() {
+        var r = 1;
+        return function () {
+            console.log(r)
+        }
+    }
+    fn()();
+
+
+
+
+
+
+</script>
+</body>
+</html>

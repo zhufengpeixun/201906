@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #tab{
+            width:300px;
+            height:240px;
+
+            margin: 100px auto;
+        }
+        #tab ul{
+            list-style: none;
+            overflow: hidden;
+        }
+        #tab ul li{
+            float: left;
+            width:80px;
+            height:20px;
+            line-height: 20px;
+            text-align: center;
+            border: 1px solid red;
+        }
+        #tab ul li.select{
+            background: red;
+            color:white;
+        }
+        #tab div{
+           display: none;
+            width:300px;
+            height:240px;
+            line-height: 240px;
+            text-align: center;
+            border: 1px solid red;
+        }
+        #tab div.select{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="tab">
+    <ul>
+        <li class="select">基本课</li>
+        <li>框架课</li>
+        <li>高级课</li>
+    </ul>
+    <div class="select">HTML</div>
+    <div>JS、VUE、REACT</div>
+    <div>NODE</div>
+</div>
+<script>
+    // 思路
+    // 1. 获取到所有的li和div，并且给每一个li添加一个点击事件；
+    // 2. 当点击某个li时，首先清空li和div上所有的class;
+    // 3. 给点击的li添加class,给对应的div添加class；
+    var  tab = document.getElementById("tab");
+    var oLis = document.getElementsByTagName("li");
+    var divs = tab.getElementsByTagName("div");
+    /*for(var i=0;i<oLis.length;i++){
+        // oLis[0].onclick =function(){}
+        // oLis[1].onclick =function(){}
+        // oLis[2].onclick =function(){}
+        // 1.自定义属性
+        oLis[i].index = i;// 给每一个li新增键值对；第一个li新增index为0；第二个index为1；第三个是2
+        oLis[i].onclick = function () {
+            for(var j=0;j<oLis.length;j++){
+                oLis[j].className="";
+                divs[j].className="";
+            }
+            // 当外层绑定点击时，此处函数是不运行；当点击的时候运行此函数；
+            // i不是私有变量，所以向外层查找，外层i已经变成了3；
+            // this--> 给元素绑定点击事件的函数中的this，指向当前被绑定的那个元素’；
+            // this --> 是个关键字；
+            this.className="select";
+            divs[this.index].className="select"
+        }
+    }*/
+     /*for(var i=0;i<oLis.length;i++){
+         oLis[i].onclick = (function (a) {
+             // 当代码运行到这一行，就执行；\
+             // 三个不销毁的作用域，分别存储i的值是 0  1 2；
+             // 不销毁作用域存储了i的值；
+             return function () {
+                 for(var j=0;j<oLis.length;j++){
+                     oLis[j].className="";
+                     divs[j].className="";
+                 }
+                 oLis[a].className="select";
+                 divs[a].className="select";
+             }
+         })(i)
+     }*/
+
+     for(var i=0;i<oLis.length;i++){
+             (function (i) {
+                 // 当前自执行函数形成的作用域不销毁
+                 oLis[i].onclick  = function () {
+                     for(var j=0;j<oLis.length;j++){
+                         oLis[j].className="";
+                         divs[j].className="";
+                     }
+                     oLis[i].className="select";
+                     divs[i].className="select";
+                 }
+             })(i);
+     }
+
+     // 闭包: 函数中返回一个小函数，小函数可以访问父函数中的变量；但是父函数不能访问子函数；
+    /*function fn() {
+        return function () {
+
+        }
+    }*/
+
+    // 4.用let定义变量，for循环就是一个大的父作用域，每循环一次，都会形成一个子子作用域，在子作用域中存储了每一次循环的i的值；
+    for(let  i=0;i<oLis.length;i++){
+        oLis[i].onclick  = function () {
+            for(var j=0;j<oLis.length;j++){
+                oLis[j].className="";
+                divs[j].className="";
+            }
+            oLis[i].className="select";
+            divs[i].className="select";
+        }
+    }
+</script>
+</body>
+</html>

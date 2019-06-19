@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. var  a=12;  fn=aaabbcc
+    /*console.log(a);// undefined
+    var a=12;
+    function fn(){
+        // var a=13;
+        console.log(a);// undefined
+        var a=13;
+    }
+    fn();
+    console.log(a);// 12*/
+
+
+    // 2.
+    // var a=13;  fn=aabbcc
+    /*console.log(a);// undefined
+    var a=12;
+    function fn(){
+        console.log(a);// 12
+        a=13;
+    }
+    fn();
+    console.log(a);*/// 13
+
+    //3.
+    /*console.log(a);
+    a=12;
+    function fn(){
+        console.log(a);
+        a=13;
+    }
+    fn();*/
+
+    //4
+    // var  foo=1;  bar=aabbcc
+   /* var foo=1;
+    function bar(){
+        // var foo;
+        if(!foo){
+            var foo=10;
+        }
+        console.log(foo);// 10
+    }
+    bar();*/
+
+   // 5.
+    // var n=0; a=aaabbcc  var c=cceeff;
+    var n=0;
+    function a(){
+        // var  n=10;  b==cceeff
+        var n=10;// 11  12
+        function b(){
+            n++;
+            alert(n);// 11  12
+        }
+        b();
+        return b;// b 实际存储了空间地址
+    }
+    var c=a();
+    c();
+    alert(n);//0
+
+    // 6.
+    // var a=10; var b=11; var c=3;test=aabbcc
+
+    var a=10,b=11,c=12;
+    function test(a){
+        //形参赋值 a=1
+        //变量提升 var b=2;
+        // c=3
+        a=1;var b=2;c=3;
+    }
+    test(10);
+    // 8
+    // var  a=4; b=aabbcc;
+
+   /* var a=4;
+    function b(x,y,a) {
+        // x=1 y=2 a=3
+        alert(a);// 3
+        // arguments和形参存在映射关系；当改变其中一个，另一个也会跟着发生改变；
+        arguments[2]=10;
+        alert(a); // 10
+    }
+    a=b(1,2,3);
+    alert(a);// undefined*/
+
+    // 9.
+    // var  foo="hello";
+    var foo='hello';
+    (function(foo){
+        // foo ="hello"
+        // var foo;
+        console.log(foo);// "hello"
+        var foo=foo||'world';
+        console.log(foo);//"hello"
+    })(foo);
+    console.log(foo);// "hello"
+
+
+
+
+
+</script>
+</body>
+</html>

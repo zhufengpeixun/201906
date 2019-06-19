@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // fn =aabbcc  var f;
+    function fn(n) {
+        // fn(5)执行形成作用域不销毁；
+        // n=5、 6
+        // n=undefined
+        // n=8
+        return function (m) {// eeddff
+            // m=6  m=7
+            console.log(m + n++)// 11
+        }
+    }
+    var f = fn(5);//f=eeddff
+    f(6)// 11
+    f(7);// 13
+    fn()(10);// NaN
+    fn(8)(9);// 17
+
+    // var  obj; var f
+
+
+    var obj = {// 当代码执行到这一行时，开辟堆内存；
+        num: 10,
+        fn: (function () {
+            // 当代码以键值对存储时，执行这个自执行函数，fn的属性值是返回的小函数；
+            // 自执行函数形成的私有作用域不销毁；
+            var num = 1;// 2  3  4 5
+            return function (n) {// n=10
+                console.log(n + (++num))
+            }
+        })()
+    }
+    var f = obj.fn;
+    f(10);// 12
+    f(20);// 23
+    obj.fn(30);// 34
+    obj.fn(40);// 45
+
+    var a = 9;// 0  1  0  1  2
+    function fn() {
+        a = 0;
+        return function (b) {
+            return b + a++;
+        }
+    }
+    var f = fn()
+    var m = f(5);
+    alert(m);// 5
+    var n = fn()(5);
+    alert(n);// 5
+    var x = f(5);
+    alert(x);// 6
+    alert(a);// 2
+
+    //var  i=8 、10、11、12、14、15、17; fn=aabbcc ;var f=eeddff;
+    var i =8;
+    function fn() {
+        i+=2;
+        return function (n) {
+            console.log(n+i++)
+        }
+    }
+    var f = fn();
+    f(5);// 15
+    f(6);// 17
+    fn(1)(7);// 21
+    fn(2)(8);// 25
+</script>
+</body>
+</html>

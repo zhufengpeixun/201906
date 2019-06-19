@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //1. git
+    // git remote -v : 查看本地仓库和远程仓库关联
+    // git remote add origin  远程仓库地址;建立本地仓库和远程仓库的关联
+    // git push origin master : 将历史区代码推送到远程仓库
+
+    // git clone  仓库地址：将远程仓库文件下载下来；
+    // git pull origin master : 拉取远程仓库最新的代码
+
+    // 2. 全局作用域、全局变量
+    // 1.提供了代码代码运行环境，存储基本数据类型值；
+    // window : 全局作用域下的大对象
+    // 在全局作用域定义的变量和函数，都会给window新增键值对
+    /*var m =9;
+    n=10;
+    function f() {
+        var t = 11;
+    }
+*/
+    // 全局变量
+
+    // 3. 私有作用域和私有变量
+    // 私有作用域的最外层作用域是全局作用域
+    // 全局不能访问私有，私有如果没有就会访问全局；
+    //
+   /* function fn() {
+        console.log(total);
+        var total=0;
+        return total;
+    }
+    fn()
+    console.log(total);*/
+    // 私有变量：
+    // 1. 在私有作用域下被var 2. 被function  3.形参
+
+
+    // 3变量提升
+    // 1. 在当前作用域下，代码运行之前；带var的只声明，不定义，function不仅声明而且还要定义
+    // 4.变量提升的特殊情况
+    // 1)不管条件是否成立，都会变量提升；
+    // 在最新的浏览器中，function只声明不定义；
+    // 在旧版本浏览器中，function声明+ 定义
+/*    console.log(n);// undefined
+    console.log(fn);// undefined
+    if([]){
+        fn();
+        var  n =1;
+        function fn() {
+
+        }
+    }
+    console.log(n);// undefined*/
+    console.log(a);// undefined
+    // in :
+    // 全局作用域下，给window新增键值对发生在变量提升阶段；
+    /*console.log(window);
+    debugger*/
+    if(!("a" in window)){
+       var a = 1;
+    }
+    console.log(a);// undefined
+
+
+    // 2. 变量提升只发生在等号的左边
+    var fn = function f() {
+
+    }
+    // 3.return右面的代码不进行变量提升，但是下面的代码要进行变量提升
+    /*function sum() {
+        console.log(y);
+        return function () {
+
+        };
+        var  y = 100;
+        function f() {
+
+        }
+    }*/
+
+    // 4. 变量名如果重复，不再重复声明，但是要重新定义
+    fn:1
+
+    fn()// 4
+    function fn() {
+        console.log(1);
+    }
+    function fn() {
+        console.log(2);
+    }
+    fn()// 4
+    function fn() {
+        console.log(3);
+    }
+    var fn = 1;
+    function fn() {
+        console.log(4);
+    }
+    fn();
+    // 5.匿名函数不进行变量提升
+    // 自执行函数当代码从上到下运行到这一行时，先定义，然后再执行；
+    (function () {
+
+    })()
+</script>
+</body>
+</html>
