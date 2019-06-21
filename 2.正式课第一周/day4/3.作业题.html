@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //var b;b = aabb  b=1
+
+    /*console.log(b);// 函数
+    b();// 1
+    var b = 1;
+    function b() {
+        console.log(1);
+    }
+    b();// 报错*/
+
+    // f1=aabbcc
+   /* function f1() {
+        // a = bbbccc
+        console.log(a);// 函数
+        var a = 1;
+        return a;
+        function a() {
+        }
+    }
+    f1();*/
+
+
+   // var  x1  f2=aabb  f3=bbcc;
+    /*f2();
+    f3();
+    var x1 = x2 = 10;
+    function f2() {
+        // 变量提升
+        console.log(x1);// undefined
+    }
+    function f3() {
+        console.log(x2);// x2 is not defined
+    }*/
+
+    //  f5 =aabb
+   /* function f5() {
+        // ff =bbccc  f=eeedd
+        f=ff();
+        return f;
+        function ff() {
+            return "f" in window;
+        };
+        var f;// 私有变量不能给window新增键值对；
+    }
+    console.log(f5());// false*/
+
+   // var  a;
+    // a=aabb   b=9 c=aabb
+    // [1,0,3,4]
+
+    /*var a = b = c = [1, 2, 3, 4];
+    b = 9;
+    a[1] = 0;
+    console.log(b[0]);// undefined
+    a = [1, 2, 3, 4];
+    c = [1, 2, 3, 4];
+    a[0] = b;
+    console.log(c);//[1,2,3,4]
+    console.log(a);//[9,2,3,4]*/
+
+  /*    var  obj = {a:1,b:2,c:{ab:"a"}};
+    var newObj = {};
+    for(var key in obj){
+        newObj[key] = obj[key];
+    }
+    newObj.c.ab="b";
+    // newObj的c的属性值和obj中c属性值是同一个空间地址；所以当newObj发生改变，obj也会随着变化；这就是浅拷贝；
+    console.log(obj);*/
+
+
+    /*if (!("aa" in window)) {
+        // 在块级作用域中，不能对用var和function同时声明同一个变量；
+        // 在块级作用域中，函数声明早于var;
+        var aa = 1;
+        function aa() {
+
+        }
+    }
+    console.log(aa);*/
+
+   /* function fn() {
+        var aa = 1;
+        function aa() {
+
+        }
+    }
+    fn()*/
+
+
+    // var i; fn=abb ;var f;
+    // i=1;
+   /* var i =1 ;
+    function fn(i){
+        // i=2 i=3
+        // i=5 i=6
+        // i=7  i=8
+        return function (n){
+            console.log(n+(++i))
+        }
+    }
+    var f = fn(2);
+    f(3)// 6
+    fn(5)(6)// 12
+    fn(7)(8)// 16
+    f(4)// 8*/
+
+    // var i  fn=aabb  var f;
+    // i=2  4 6  8
+    var i =2
+    function fn (){
+        i +=2;
+        return function (n){
+            console.log(n+(--n))
+        }
+    }
+    var f =fn();
+    f();// NaN
+    f(3)// 5
+    fn()(2);// 3
+    fn()(3);// 5
+    f(4)// 7
+</script>
+</body>
+</html>

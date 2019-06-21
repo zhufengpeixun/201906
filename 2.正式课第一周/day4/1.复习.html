@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // git  变量提升  作用域    this   面向对象；
+    // git  init
+    // git  add   .
+    // git commit -m""
+    // git push origin master
+    // git clone 远程仓库地址
+    // git pull origin master
+
+    // git status
+    // git remote -v
+    // git remote add origin  远程仓库地址
+    // git log : 打印日志；
+    // 每次向历史区提交一次，都会产生一个唯一的id号；
+
+
+    // 2. 变量提升
+    // 在当前作用域下，代码运行之前；把带var和function的进行提前的声明。带var只声明不定义，带function声明而且定义；
+    /*var num = 100;
+    f();
+    function fn() {
+        // f
+        f()
+        function f() {
+
+        }
+    }*/
+
+    // 1.不管条件是否成立，都要进行变量提升；
+    // 2.变量提升只发生在等号的左边
+    // 3. return 下面的代码不执行但是要进行变量提升，右面的不进行变量提升
+    // 4. 如果变量变量名字重复，不再重复声明，但是要重新定义
+    // 5. 匿名函数不需要进行变量提升；
+    // 6. let 声明的变量不进行变量提升；在同一个作用域，不允许重复命名相同的变量名；
+    /*if([]==[]){
+        var num = 1;
+    }
+    (function () {
+
+    })();*/
+    // 在es6中用let 定义变量；
+    // ECMAScript6
+    // ECMAScript 和JavaScript的关系：
+    //fn();
+    //    console.log(num);
+    //    let num =100;
+    //    let num =100
+    // num在变量提升时，要提前声明，但是不进行变量提升；
+    //    function fn() {
+    //        let num =1;
+    //        console.log(num);
+    //    }
+    /*var  fn1 = 1;
+    let fn1 = function () {
+        return 1;
+    }
+*/
+/*    let num = 123;
+    function fn(){
+        let bug = ".";
+        let bug  = '13335';
+    }
+    console.log(num);*/
+</script>
+</body>
+</html>

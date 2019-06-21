@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="box">11</div>
+<script>
+    // console.log(this);// window
+    //  this : 函数的执行主体；是谁让这个函数运行的；
+    // this --> 是一个关键字；在不同的情况下，this指向不同的值；
+    // 关键字： 在JS中有特殊意义的一些词；
+    // console.log(this);
+    // 1.在全局作用域下，this指向window；（this和window是同一个空间地址）
+    // 2.函数体中的this，看函数执行前有没有点，点前面是谁，this就指向谁，如果函数执行前没有点，那么this就会指向window；
+    // 3.给元素的事件行为绑定（onclick\onmouseover...）方法，那么方法中的this指向被绑定的那个元素；
+    // 4.自执行函数中this永远指向window；
+    // 5.回调函数中的this一般情况下指向window；
+    /*this.a = 100;
+    console.log(window);*/
+    /*function fn() {
+        console.log(this);
+    }
+    fn();*/
+   /* var obj = {
+        a:1,
+        f:{
+        foo:function () {
+            console.log(this);// obj.f
+        }
+    }
+    }
+    obj.f.foo();*/
+    /*var  fn = obj.f;
+    fn();*/
+    // 作业： 实现一个盒子匀速向右运动
+   /* box.onclick = function () {
+        //console.log(typeof this);// this--> 元素
+        console.dir(this==box);
+        this.className=""
+        this.style.backgroundColor="red";
+    }*/
+
+    /*(function () {
+        console.log(this);
+    })();*/
+    /*var obj = {
+        f:(function () {
+            console.log(this);// window
+            return function () {
+                console.log(this);// obj
+            }
+        })()
+    }
+    obj.f();
+*/
+    // 回调函数： 函数B作为实参传给函数A，在函数A中任意位置可以调用函数B，那么函数B就是函数A的回调函数；
+   /*var obj ={
+       A:function A(B) {
+           console.log(this);// obj
+           B();
+        }
+   }
+   obj.A(function () {console.log(this);})*/
+    /*setTimeout(function () {
+       console.log(this);
+   },2000)*/
+   /*var ary = [1,2];
+   ary.map(function () {
+       console.log(this);
+   })*/
+</script>
+</body>
+</html>

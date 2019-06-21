@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. 堆栈内存
+    /*var obj = {};
+    obj = null;*/
+    // 2. 栈内存： 全局作用域和私有作用域；
+    // window
+    // let ： let声明的变量不会给window新增键值对；
+    /*window.Number();
+    var  num = 10;
+    n = 100;
+    let a = 100;*/
+
+    // 私有作用域
+    // 当在私有作用域下获取num值时，首先看是否是私有的；
+    // 怎么判断是不是私有的：
+    // 1. 有没有被var  2.有没有被function  3. 是不是形参；
+    var num =100;
+    function fn() {
+        console.log(num);
+        var num =0;
+        return function () {
+
+        }
+    }
+    fn()();
+
+    // 立即销毁的作用域
+    // 不销毁的作用域
+    //  1. return 一个引用数据类型
+    //  2. 并且被外界接收；
+    //  3. 特殊： 给元素事件的行为绑定的方法
+    // 作用： 存值；
+    // 不立即销毁的作用域
+    // 上一级作用域：
+    var total = 19;
+    function fn() {
+        var total= 1;
+        return function () {
+            console.log(total);
+        }
+    }
+    var  f = fn();
+    f()
+
+
+
+
+</script>
+</body>
+</html>

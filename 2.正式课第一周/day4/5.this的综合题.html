@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 变量提升 、作用域销毁 、this；
+    // var  num=2;  var obj;
+    var num =2;// 1  2
+    var obj = {
+        num : 0,
+        fn : function () {
+            // this--> obj
+            num = 1;
+            (function (num) {// num:0
+                ++this.num;
+                num++;
+                console.log(num)// 1
+            })(this.num)
+        }
+    }
+    obj.fn();
+    console.log(window.num,obj.num);//  2 0;
+
+
+    // var a ;var  obj1;var fn1;
+    // a =2  fn1：
+    var a = 2;// 4
+    var obj1 = {
+        a: 1,// 3
+        fn1: (function (a) { // 当以键值对形式存储到堆内存中时，自执行函数运行；
+            // a=5  this--> window
+            this.a = a;
+            a++;
+            return function () {
+                this.a = a++;// this-->obj1
+                console.log(a)  ;// 4  5
+            }
+        })(a)
+    };
+    obj1.fn1();
+    var fn1 = obj1.fn1;
+    fn1();// 3
+    console.log(a);console.log(obj1.a);// 4 3;
+
+    /*window.num :2
+    obj.num: 4;
+    私有作用域的number:*/
+
+    var number = 2;
+    var obj = {
+        number:4,
+        fn1: (function () {
+            this.number *= 2;
+            number = number * 2;
+            var number = 3;
+            return function () {
+                this.number *= 2;
+                number *= 3;
+                alert(number);
+            }
+        })()
+    };
+    var fn1 = obj.fn1;
+    alert(number);
+    fn1();
+    obj.fn1();
+    alert(window.number);
+    alert(obj.number);
+
+
+    var b = 12;
+    function f() {
+
+    }
+    f(b)
+
+
+
+    var obj = {
+        b:10,
+        fn:(function () {
+
+        })(b)
+    }
+    b
+
+
+</script>
+</body>
+</html>
