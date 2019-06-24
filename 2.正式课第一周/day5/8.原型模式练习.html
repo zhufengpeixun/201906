@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*function Fn(a,b) {
+        this.a = a;
+        this.b = b;
+        this.getX= function () {
+            console.log(this.a);
+        }
+    }
+    Fn.prototype.getX = function () {
+        console.log(this.a);
+    }
+    Fn.prototype.getY=function () {
+        console.log(this.b);
+    }
+    var f = new Fn(100);//{a:100,b:undefined}
+    var f1 = new Fn(200);//{a:200,b:undefined}
+    console.log(f.getX === f.__proto__.getX);*/// false
+    /*console.log(f.constructor === Fn.prototype.constructor);//true
+    console.log(f.__proto__.getX == Fn.prototype.getX);// true
+    console.log(f.__proto__.getX == Fn.getX);// false
+    console.log(f.b === f1.b);*/// true
+    //console.log(f.getX === Fn.prototype.getX);
+    //f.getX();
+    /*console.log(f.getX == f1.getX);
+    console.log(f.getY == f1.getY);*/
+   /* var obj = {};
+    console.log(obj.toString);
+    console.log(f.toString);
+    console.log(f);
+    console.log(Fn.prototype instanceof Object);
+    /// Array   Object {}
+    console.log(new Object());*/
+
+    // 原型链： 当获取对象属性名所对应的属性值时，如果属性名不存在，会通过__proto__属性继续向上查找，如果父类原型上也不存在这个属性，会通过原型中的__proto__继续向上查找，直到找到Object的原型为止，如果Obejct的原型中也不存在，那么会输出undefined；这种一级一级向上查找的机制就形成了原型链；
+
+    //var  ary = [];
+    //console.log(ary.hasOwnProperty===Object.prototype.hasOwnProperty);
+    //var  obj = {};
+
+
+
+</script>
+</body>
+</html>

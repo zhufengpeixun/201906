@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // window.number ：2  4 8
+    // obj.number:4  8
+    // 私有作用域下的number：undefined  NaN  3  9  27
+    // 任何数字和undefined运算都是NaN
+    // var number;  var obj;  var fn1
+  /*  var number = 2;
+    var obj = {
+        number:4,
+        fn1: (function () {
+            // this--> window
+            // number
+            this.number *= 2;
+            number = number * 2;
+            var number = 3;
+            return function () {
+                // this-->window
+                // this--> obj
+                this.number *= 2;
+                number *= 3;
+                alert(number);// 9
+            }
+        })()
+    };*/
+   /* var fn1 = obj.fn1;
+    alert(number);// 4
+    fn1();
+    obj.fn1();
+    alert(window.number);
+    alert(obj.number);*/
+
+
+    /*var  obj ={
+        fn:function () {
+            var num =1;
+            return (function () {
+                return 100;
+            })()
+        }
+    }
+    //console.log(obj.fn);//
+    console.log(obj.fn());*/
+
+
+    // this
+    // this :
+    // 1. 全局作用域下的this指向window
+    // 2. 看函数执行前有没有点，点前面是谁，this就是谁
+    // 3. 给元素的事件绑定方法，方法中的this指向被绑定的元素
+    // 4. 自执行函数中的this指向window
+    // 5. 回调函数中的this一般情况下指向window；
+    // 6. 构造函数中的this指向当前类的实例
+    // 7. call、apply、bind可以改变this指向；
+
+</script>
+</body>
+</html>

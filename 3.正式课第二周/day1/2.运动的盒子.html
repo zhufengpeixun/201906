@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width:100px;
+            height:100px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="box" style="left:0px;top:0px;"></div>
+<script>
+    var box = document.getElementById("box");
+    function sport() {
+        var  currentLeft = parseFloat(box.style.left);
+        var  currentTop = parseFloat(box.style.top);
+        if(currentLeft<500&&currentTop==0){
+            box.style.left = currentLeft+1+"px";
+        }
+        if(currentLeft==500&&currentTop<500){
+            box.style.top = currentTop+1+"px"
+        }
+        if(currentTop==500&&currentLeft>0){
+            box.style.left = currentLeft-1+"px";
+        }
+        if(currentLeft==0&&currentTop>0){
+            box.style.top = currentTop-1+"px"
+        }
+    }
+    setInterval(sport,10)
+
+
+
+
+</script>
+</body>
+</html>

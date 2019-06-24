@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 构造函数本身就是函数；
+   /* function fn(name,age) {
+        var obj = {};
+        obj.name = name;
+        obj.age = age;
+        return obj;
+    }
+    fn("程亚光",20)*/
+    // 函数执行的前面加new,那么此函数就变成一个构造函数；
+    function Fn(name,age) {
+        // 如果当前函数是一个构造函数；
+        // new操作符做了什么？
+        // 1.函数执行时，代码运行之前，会首先默认创建一个空对象
+        // 2.并且让当前作用域下的this指向了这个空对象
+        // 3.当代码运行完成之后，会默认把this返回；
+        //var obj = {};
+        var total = 1;
+        this.name = name;
+        this.age = age;
+    }
+    //var f = new Fn("程亚光", 20);
+    //var f1 = new Fn;
+    new Fn();
+    console.log(f);// {name:undefined,age:undefined}
+    // fn执行前面加new,fn就是一个构造函数，也可以说是一个类；
+    // f就是类fn的一个实例；
+
+    // 构造函数的特点：
+    // 1.如果不需要传递参数，小括号可以省略的；
+    // 2.类一般都是首字母大写，new可以让构造函数直接运行；
+    // 3. 普通函数执行：形成私有作用域--> 形参赋值-->变量提升--> 代码从上到下运行-->作用域是否销毁
+         //构造函数运行：形成私有作用域 --> 形参赋值-->变量提升-->创建一个空对象，并且把this指向空对象--> 代码从上到下运行--> 默认return函数体中this-->作用域是否销毁
+      // 4. 如果return一个引用数据类型的值，那么会把默认返回的值进行覆盖；如果return一个基本数据类型值，不影响返回的默认值；
+    // 5.构造函数中的this，指向当前类的实例；
+    // 6.instanceOf : 检测当前实例是否属于某个类的；
+    console.log(f instanceof Fn);
+    var  ary = [];// ary是数组类Array的实例
+    console.log(ary instanceof Array);
+
+</script>
+</body>
+</html>

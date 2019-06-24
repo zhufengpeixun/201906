@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width:100px;
+            height:100px;
+            background: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="box" style="left:0px"></div>
+<script>
+    // 要操作谁，就要先获取谁；
+    var oBox = document.getElementById("box");
+    // 盒子运动
+    // 1. 每隔100ms，重新设置一下盒子的位置
+    // 1.定时器
+    // 2.位置新增
+    oBox.onclick = function () {
+        //console.log(1)
+        //alert(100)
+        //debugger// 当代码执行到这一行时，代码会停下，下面的代码不再执行了
+        //this.style.left="100px";
+        // 匀速运动
+        /*var dis = 0;
+        var that = this;
+        setInterval(function () {
+            dis+=1;
+           that.style.left=dis+"px";
+        },10);*/
+        setInterval(function () {
+            // 先获取一下当前的位置,把当前位置的数字提取出来，然后进行运算；
+            // 元素.style.left 只能获取行内元素的样式
+            var current = parseFloat(box.style.left);
+            console.log(current);
+            box.style.left=current+1+"px";
+        },10)
+    }
+    /*var  obj ={a:1};
+    var f = obj.a
+    obj.a=100;*/
+    // 正方形运动
+    // 将来的你，一定感谢现在拼搏的自己；
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //
+   /* var  name1="庞亚明";
+    var  age1=18;
+    var  name2="张帅文";
+    var  age2 = 20;*/
+    var person1 = {name:"庞亚明",age:18};
+    var person2 = {name:"张帅文",age:20};
+    // 在JS中，把描述同一个事物的属性放到一个空间地址下，当想使用时，可以通过空间地址进行调用；避免了全局变量的干扰；这种模式就是“单例模式”；
+    var yaming={
+        change:function () {
+
+        }
+    }
+
+    var shuaiwen={
+        change:function () {
+
+        },
+        fn:function () {
+
+        }
+    }
+
+    // 高级单例模式；
+    // 利用了闭包进行存储值，当调用方法时，可以获取到上一级作用域中变量；
+    var  utils = (function () {
+        var num =100;
+        return {
+            change:function () {
+                // 上一级作用域；
+            },
+            fn:function () {
+
+            }
+        }
+    })
+    utils.change();
+
+
+</script>
+</body>
+</html>
