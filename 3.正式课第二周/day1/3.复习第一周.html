@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 代码的解析规则以及设计规则：
+    // 变量提升 、作用域、this 、面向对象；
+    // var  function
+    // 几种特殊情况变量提升
+    // 1. 不管条件是否成立，都要进行变量提升；
+    // 新浏览器： function 只声明，不定义
+    // 旧版本浏览器： function 声明且定义
+
+    // 2. 变量提升只发生在等号的左边
+    // 3. return下面的代码要进行变量提升，后面的不进行变量提升
+    // 4. 如果变量名字重复，不再重复声明，但是要重新定义
+    // 5. 自执行函数，不进行变量提升
+
+    // 在全局作用域下的函数，开辟空间地址是发生在变量提升的阶段
+    /*function fn() {
+    }*/
+    // 当开辟对象的空间地址时，会首先存储属性名为数字的键值对，并且是从小到大，然后再依次存储不是数字的；
+    /* var num = 100;
+     var  obj = {
+        num:"n",
+        fn:(function () {
+             console.log(num)
+              return 100;
+           })(),
+        10:20,
+        1:2
+    }*/
+    /*console.log(obj);
+    for(var key in obj){
+        console.log(key);
+    }*/
+
+
+    /*function fn() {
+        (function () {
+
+        })()
+    }*/
+
+
+    // 作用域
+    // 全局作用域和私有作用域
+    //
+    /*var a=100;
+    function fn(a) {
+        console.log(a);
+        /!*function a() {
+
+        }*!/
+        var a =1;
+    }
+    fn(a);*/
+    // 私有作用域：
+    // 1.
+    // 2. 私有变量：1）被var或被function 2）是不是形参
+
+    // 上一级作用域：
+
+    // 作用域的销毁；
+    /*function fn() {
+        return {}
+    }
+    var f =fn();*/
+    
+    // 2. 
+    /*var obj = {
+        fn:(function () {
+            // 这个作用域
+            return function () {
+                
+            }
+        })()
+    }*/
+    // 3. 
+    /*(function (i) {
+        // 这个作用域不销毁；
+        box.onclick = function () {
+
+        }
+    })(i)*/
+    // 4.for循环如果用let声明，会形成一个父级私有作用域，每循环一次都会形成一个子作用域，在子作用域中存储了每一次循环i的值；并且这父子作用域是不销毁的；外界也没有办法获取到当前父子作用域中的i;
+    /*var ary = [1,2,3,4,65,6,7,4,4567,6,7,77]
+    for(let i=0;i<10;i++){
+        ary[i].onclick = function () {
+            console.log(i);
+        }
+    }
+    console.log(i);*/
+
+
+    // 不立即销毁
+    /*function fn() {
+        // 这个作用域是不立即销毁的；
+        return function () {
+        }
+    }
+    fn()();*/
+
+    // this ：关键字
+    // this : 在特殊的情况下，代表了特殊的意义；
+    //
+    /*function fn() {
+        // this和window空间地址是同一个；
+        this.a=100;
+    }
+    var b = a;
+    fn();
+*/
+
+    var  ary = [12,3,5,6];
+    var  ary1 = [1,23,35,86];
+    ary.push(100,90);
+    ary1.push(10);
+    Array.prototype.push= function (a) {
+        this[this.length]=a;
+    }
+
+
+</script>
+</body>
+</html>

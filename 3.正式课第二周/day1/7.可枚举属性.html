@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Fn() {
+        this.a = 100;
+        this.b = 200;
+    }
+    Fn.prototype.getX = function () {
+
+    }
+    var f = new Fn;// {a:100,b:200}
+    //console.log("getX" in f);
+    for(var key in f){
+        console.log(key);
+        // hasOwnProperty;可以筛选出私有属性；
+    }
+
+    // 私有属性和自定义的公有属性都是可枚举属性；
+    // 内置的公有属性都是不可枚举属性；
+
+
+</script>
+</body>
+</html>

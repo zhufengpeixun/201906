@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 面向对象
+    // 1. 单例模式：解决了全局变量的干扰
+    // 2. 工厂模式：实现函数的封装，减少代码冗余
+    // 3. 构造函数模式：解决了实例的私有属性的问题；
+    // 4. 原型模式： 解决了公有属性的问题
+    function Fn() {
+        // 1.在代码运行之前，会默认创建一个空对象
+        // 2.让当前作用域下的this指向这个创建的空对象
+        // 3. 当代码运行完之后，默认把this返回
+
+        // 在构造函数中，this指向当前的实例；
+        // 构造函数也叫类；
+        // return 引用会默认覆盖原有的实例，return基本数据类型不能更改；
+        // instanceOf : 检验实例是否属于某个类的方法
+        //  hasOwnProperty: 检测当前属性是否是私有的；如果是返回true，不是返回false；
+        // in :
+       // console.log(num);
+        var num = 10;
+        this.a = 19;
+    }
+    Fn.prototype.getX=function () {
+
+    }
+    var  f = new Fn;//{a:19}
+    var  f1= new Fn;//{a:19}
+    /*console.log("hasOwnProperty" in f);
+    console.log(f.hasOwnProperty("getY"));*/// f通过自己的__proto__找到了Fn的prototype,Fn的prototype中没有hasOwnProperty这个属性，所以会继续通过__proto__继续向上查找，找到Object的prototype中的hasOwnProperty;然后让其执行4
+    //
+    /*var  obj = {c:1}// Object
+    console.log(obj.mn);*/
+    // 类 ： 自定义类、内置类
+    // 内置类： Number、String、Boolean、Null、Undefined
+    // Object 、Array、RegExp、Date、Function...
+    //console.log(typeof Math);
+   // 如果是公有属性返回true，不是返回false；
+    // 1.判断是否是自己的一个属性
+    // 2. 如果是自己的，并且不是私有的，那就是公有的；返回true；
+
+   function hasPublicProperty(obj,attr) {
+        /*if(attr in obj){
+            if(!obj.hasOwnProperty(attr)){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }*/
+       return  attr in obj&&!obj.hasOwnProperty(attr)?true:false;
+   }
+    console.log(hasPublicProperty(f, "getX"));
+</script>
+</body>
+</html>

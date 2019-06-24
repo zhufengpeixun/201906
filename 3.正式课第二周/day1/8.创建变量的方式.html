@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1.字面量方式创建；字面量方式创建的实例不是一个标准的实例；
+    var num = 100;
+    var obj = {};
+    num.toFixed()
+    // 2. 实例创建
+    num.toFixed(2);
+    // num 是Number内置类的一个实例；
+    console.log(num instanceof Number);
+    var a = new Number(1)
+    console.log(a instanceof Number);
+    console.log(obj instanceof Object);
+    console.log(a==1);
+    // instanceOf 不能校验通过字面量方式创建的基本数据类型的实例；
+
+    // 如果new Array只传递一个实参数字，那么代表当前数组实例的长度
+    var  ary = new Array("1");
+    console.log(ary);
+
+</script>
+</body>
+</html>

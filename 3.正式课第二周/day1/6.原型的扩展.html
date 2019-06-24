@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*function Fn() {
+
+    }
+    console.log(Fn.prototype);*///{constructor:Fn}
+    //1. 向Fn的原型上新增键值对；
+    /*Fn.prototype.foo = function () {
+
+    }*/
+    // 2.把Fn的原型直接用新的空间地址进行覆盖，原有的constructor会消失，一般需要手动加上
+    /*Fn.prototype = {
+        constructor:Fn,
+        getX:function () {}
+    }
+    var f = new Fn;
+    f.getX();
+    console.log(f.constructor);*/// Object
+
+    // Array是一个内置类；原型上有好多公共的方法
+    console.log([].push === [].push);// true;
+    var  a = [1,2,1,2,1,234,55,6,5]
+    Array.prototype.unique = function () {
+        var obj = {};
+        for(var i=0;i<this.length;i++){
+            var cur = this[i];
+            if(obj[cur]===cur){
+                this[i]=this[this.length-1];
+                this.length--;
+                i--;
+                continue;
+            }
+            obj[cur]=cur;
+        }
+    }
+    a.unique();
+    console.log(a);
+
+    /* var  a = [1,2,4];
+    var b = a[0];
+    b=100;
+    console.log(a);//[1,2,4]*/
+
+    // 2.如果名字和内置的方法相同，会将原有的进行覆盖；
+    /*Array.prototype.push= function () {
+        console.log(100)
+    }
+    var a = [21,3,4];
+    a.push(100)
+    console.log(a);*/
+
+    // 3.内置类原型的空间地址不可以被修改；
+    /*Array.prototype = {
+        push:function(){
+            console.log(100);
+        }
+    }
+    var a = [21,3,4];
+    a.push(1);
+    console.log(a);*/
+
+
+    // pop
+    Array.prototype.myPop = function () {
+        var cur = this[this.length-1];// 利用了变量临时存储的思想；
+        this.length--;
+        return cur;
+    }
+    var ary = [1,2,3];
+    console.log(ary.myPop());
+    console.log(ary);
+    ary.push(12)
+
+    // push  shift  unshift   concat   reverse  indexOf  lastIndexOf join
+    // slice  splice  sort(function(a,b){return a-b})
+
+
+
+</script>
+</body>
+</html>

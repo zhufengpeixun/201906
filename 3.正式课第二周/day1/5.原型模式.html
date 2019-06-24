@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Fn() {
+        this.x = 100;
+        this.y = 200;
+        this.obj ={}
+    }
+    Fn.prototype.getX = function () {
+        console.log(this.x);
+    }
+    var f = new Fn;
+    f.getX();
+    Fn.prototype.getX();
+    console.log(Fn.prototype === f.__proto__);// true
+    f.__proto__.getX()// undefined
+    /*var f = new Fn;// {x:100,y:200,obj:{}}
+    var f1=new Fn;
+    console.log(f.x===f1.x);
+    f.getX();
+    console.log(f.obj === f1.obj);*/// false
+    // 1.每一个函数数据类型，天生自带一个prototype属性，它的属性值是一个对象数据类型的
+    //2.原型的属性值中天生自带一个constructor属性，其属性值指向当前原型所属的类
+    // 3.每一个对象数据类型都有一个__proto__的属性，其属性值指向当前实例所属类的原型
+
+    var obj = {};
+
+
+</script>
+</body>
+</html>
